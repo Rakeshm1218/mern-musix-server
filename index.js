@@ -17,6 +17,14 @@ app.use('/songs', songRoutes);
 app.use('/users', userRoutes);
 app.use('/playlist',playlistRoutes)
 
+app.get('/', (req,res) => {
+  try{
+  res.send('Hello World!');
+  } catch(error) {
+    console.error(error.message);
+  }
+})
+
 
 mongoose
   .connect(process.env.MONGO_URL)
